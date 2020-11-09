@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class DetailsViewController: UIViewController, SFSafariViewControllerDelegate, UIGestureRecognizerDelegate {
+class DetailsViewController: PRBaseViewController, SFSafariViewControllerDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var profileView: UIView!
@@ -72,11 +72,9 @@ class DetailsViewController: UIViewController, SFSafariViewControllerDelegate, U
     }
     
     func configureUIForSubView() {
-        let gradientColors : [CGColor] = [UIColor.black.cgColor,
-            UIColor(displayP3Red: 32/255, green: 32/255, blue: 32/255, alpha: 1).cgColor
-        ]
+
+        setUpHeader(forView : headerView)
         
-        view.addGradientView(withColors: gradientColors, andLocations: [0.1, 0.4])
         readFullPageButton.setCorners(withRadius: 20)
         profileView.setCorners(withRadius: 15)
         profileView.clipsToBounds = true
@@ -92,7 +90,6 @@ class DetailsViewController: UIViewController, SFSafariViewControllerDelegate, U
         descriptionTextView.layer.cornerRadius = 6
         descriptionTextView.layer.borderColor = UIColor.gray.cgColor
         descriptionTextView.layer.borderWidth = 1
-        
     }
     
     func setUpGestures() {
@@ -118,7 +115,6 @@ class DetailsViewController: UIViewController, SFSafariViewControllerDelegate, U
             descriptionTitleLabel.setAttributedText(withBoldedPart: descriptionHead.0, andOtherPart: descriptionHead.1, isBoldStringFirst: true, fontSize: 14)
             backButtonTitleLabel.text = RepoManager.shared.getRepoPath() + "/#" + pr.number
         }
-        
     }
     
     func displayTimelines(withDate date : Date?, intoStackView stack : UIStackView, andtitleLabelText text : String) {

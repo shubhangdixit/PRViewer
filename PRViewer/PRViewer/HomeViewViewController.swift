@@ -31,7 +31,7 @@ enum SearchState {
     }
 }
 
-class HomeViewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class HomeViewViewController: PRBaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -43,8 +43,6 @@ class HomeViewViewController: UIViewController, UITableViewDelegate, UITableView
     var observer: NSKeyValueObservation?
     
     var selectedFilterOption : FilterOptions = .all
-    
-    let homeScreenValues = HomeScreenValues()
     
     var searchState : SearchState = .searched("") {
         didSet {
@@ -87,17 +85,7 @@ class HomeViewViewController: UIViewController, UITableViewDelegate, UITableView
     
     func configureUIforSubViews() {
         
-        view.backgroundColor = homeScreenValues.backgroundColor
-        
-        topView.layer.masksToBounds = false
-        topView.layer.shadowColor = UIColor.black.cgColor
-        topView.layer.shadowOpacity = 0.5
-        topView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        topView.layer.shadowRadius = 1
-        
-        topView.layer.shadowPath = UIBezierPath(rect: topView.bounds).cgPath
-        topView.layer.shouldRasterize = true
-        view.bringSubviewToFront(topView)
+        setUpHeader(forView : topView)
         
         searchBar.isHidden = true
         titleView.isHidden = false
@@ -175,9 +163,9 @@ class HomeViewViewController: UIViewController, UITableViewDelegate, UITableView
 extension HomeViewViewController {
     
     func presentActionSheet(forActions actionList : [String], senderView : UIView) {
-        let titles = "Filter PRs based on State"
+        let titles = prFilterTitleString
         var images : [String : String] = [:]
-        images[selectedFilterOption.rawValue] = "Selection_Tick"
+        images[selectedFilterOption.rawValue] = selectionTickImageNAme
         
         self.showActionSheet("", title: titles, actionTittle: actionList, images: images, withHandler: sortSelectionHandler(action:), andSourceView: senderView)
     }

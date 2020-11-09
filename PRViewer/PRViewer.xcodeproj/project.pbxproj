@@ -25,8 +25,8 @@
 		9D5C06F72317C5EC00C94405 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5C06F62317C5EC00C94405 /* UIImageViewExtension.swift */; };
 		9D5C06F92317E1DC00C94405 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5C06F82317E1DC00C94405 /* DetailsViewController.swift */; };
 		9D5F9D7C255435AD00D2F8CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F9D7B255435AD00D2F8CB /* Extensions.swift */; };
-		9D5F9D7F2554545100D2F8CB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F9D7E2554545100D2F8CB /* GradientView.swift */; };
 		9DB6BB1C255838580068B97D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6BB1B255838580068B97D /* Config.swift */; };
+		9DB6BB212558CEAE0068B97D /* PRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6BB202558CEAE0068B97D /* PRBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +50,9 @@
 		9D5C06F62317C5EC00C94405 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		9D5C06F82317E1DC00C94405 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		9D5F9D7B255435AD00D2F8CB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		9D5F9D7E2554545100D2F8CB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		9D94FAF8237053A300D33EE3 /* PRViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PRViewer.entitlements; sourceTree = "<group>"; };
 		9DB6BB1B255838580068B97D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		9DB6BB202558CEAE0068B97D /* PRBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +98,12 @@
 				9D5C06F82317E1DC00C94405 /* DetailsViewController.swift */,
 				9D07D76A255707680072CBC4 /* PullRequest.swift */,
 				9D5F9D7B255435AD00D2F8CB /* Extensions.swift */,
-				9D5F9D7E2554545100D2F8CB /* GradientView.swift */,
 				9D07D7632556FFFC0072CBC4 /* User.swift */,
 				9D07D766255705520072CBC4 /* Repo.swift */,
 				9D07D76E2557107C0072CBC4 /* RepoManager.swift */,
 				9D07D77425582CBF0072CBC4 /* PRTableViewCell.swift */,
 				9DB6BB1B255838580068B97D /* Config.swift */,
+				9DB6BB202558CEAE0068B97D /* PRBaseViewController.swift */,
 			);
 			path = PRViewer;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 				9D0D00BB2316A07300388252 /* NetworkManager.swift in Sources */,
 				9DB6BB1C255838580068B97D /* Config.swift in Sources */,
 				9D07D76B255707680072CBC4 /* PullRequest.swift in Sources */,
-				9D5F9D7F2554545100D2F8CB /* GradientView.swift in Sources */,
+				9DB6BB212558CEAE0068B97D /* PRBaseViewController.swift in Sources */,
 				9D5C06F92317E1DC00C94405 /* DetailsViewController.swift in Sources */,
 				9D5C06DE2317B49900C94405 /* HomeViewViewController.swift in Sources */,
 				9D07D77525582CBF0072CBC4 /* PRTableViewCell.swift in Sources */,
