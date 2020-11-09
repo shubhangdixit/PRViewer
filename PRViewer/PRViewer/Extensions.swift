@@ -23,48 +23,6 @@ extension UIView {
     func setCorners(withRadius radius : CGFloat) {
         layer.cornerRadius = radius
     }
-    
-    func addGradientView(withColors colors : [CGColor], andLocations locations : [NSNumber] = []) {
-        let subView = GradientView(frame: self.bounds)
-        self.addSubview(subView)
-        let constraints = [
-            subView.topAnchor.constraint(equalTo: self.topAnchor),
-            subView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            subView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            subView.rightAnchor.constraint(equalTo: self.rightAnchor)
-        ]
-        subView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(constraints)
-        subView.backgroundColor = .clear
-        subView.drawGradients(forColors: colors, andLocations: locations)
-        self.sendSubviewToBack(subView)
-    }
-    
-    func dropShadow(scale: Bool = true) {
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.25
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 4
-    }
-    
-    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
-        layer.masksToBounds = false
-        layer.shadowColor = color.cgColor
-        layer.shadowOpacity = opacity
-        layer.shadowOffset = offSet
-        layer.shadowRadius = radius
-        
-        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        layer.shouldRasterize = true
-        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-    }
-}
-
-extension UIColor {
-    class func slicePurple() -> UIColor {
-        return UIColor(displayP3Red: 54/255, green: 49/255, blue: 94/255, alpha: 1)
-    }
 }
 
 extension UIViewController {
